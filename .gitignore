@@ -64,7 +64,7 @@ __pycache__/
 # Multi-Agent Collaboration (repo-specific rule, 2026-10-14):
 # - .orca is NEVER versioned (local-only coordination state)
 # - Other agent config folders (.claude/.codex/.opencode/.pi/.agents/.codegraph)
-#   ARE versioned on local-only agent branches (ZX666X/*, never pushed).
+#   ARE versioned on local-only agent branches (ZX466/*, never pushed).
 #   On the main worktree they stay untracked via .git/info/exclude so pushed
 #   branches never contain them.
 # =============================================================================
