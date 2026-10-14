@@ -47,7 +47,7 @@ Thumbs.db
 *.sln
 *.sw?
 
-tests
+# tests  (bare rule removed 2026-10-14: it also ignored backend/tests; use specific paths if needed)
 .venv
 scratch/
 PRESENTATION_DECK.md
