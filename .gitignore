@@ -47,7 +47,7 @@ Thumbs.db
 *.sln
 *.sw?
 
-tests
+# tests  (bare rule removed 2026-10-14: it also ignored backend/tests; use specific paths if needed)
 .venv
 scratch/
 PRESENTATION_DECK.md
@@ -61,13 +61,20 @@ __pycache__/
 *.db
 
 # =============================================================================
-# Multi-Agent Collaboration (repo-specific rule: NOTHING under .orca or other
-# agent dot-folders is versioned in THIS repo — all local-only)
+# Multi-Agent Collaboration (repo-specific rule, 2026-10-14):
+# - .orca is NEVER versioned (local-only coordination state)
+# - Other agent config folders (.claude/.codex/.opencode/.pi/.agents/.codegraph)
+#   ARE versioned on local-only agent branches (ZX466/*, never pushed).
+#   On the main worktree they stay untracked via .git/info/exclude so pushed
+#   branches never contain them.
 # =============================================================================
 .orca/
-.claude/
-.opencode/
-.codex/
-.agents/
-.codegraph/
 .agent/
+# Runtime artifacts inside agent folders (tracked folders stay clean)
+.codegraph/*.db-shm
+.codegraph/*.db-wal
+.codegraph/daemon.log
+.codegraph/daemon.pid
+
+# Test-only env files
+backend/.env.test
