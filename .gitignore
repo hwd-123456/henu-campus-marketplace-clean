@@ -75,3 +75,6 @@ __pycache__/
 .codegraph/*.db-wal
 .codegraph/daemon.log
 .codegraph/daemon.pid
+
+# Test-only env files
+backend/.env.test
